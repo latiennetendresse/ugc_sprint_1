@@ -1,7 +1,34 @@
-# Проектная работа 8 спринта
+# Перед любым запуском нужно создать сеть, если она еще не создана
+```bash
+  docker network create shared_network
+```
 
-Проектные работы в этом модуле выполняются в командах по 3 человека. Процесс обучения аналогичен сервису, где вы изучали асинхронное программирование. Роли в команде и отправка работы на ревью не меняются.
+# Как запускать через docker-compose
 
-Распределение по командам подготовит команда сопровождения. Куратор поделится с вами списками в Slack в канале #group_projects.
 
-Задания на спринт вы найдёте внутри тем.
+1. Скопировать /ugc_sprint_1/ugc_service/env/.docker.env как /ugc_sprint_1/ugc_service/env/.env
+2. Перейти в директрорию ugc_sprint_1
+```bash
+cd ugc_sprint_1
+```
+3. Запустить сборку docker-compose
+```bash
+docker-compose -f docker-compose.yaml up
+```
+4. Сервис доступен по адресу https://127.0.0.1:445/api/openapi
+5. Сервис Kafka доступен по адресу http://127.0.0.1:9021/clusters
+
+# Как запускать локально через Run Configuration
+
+1. Скопировать /ugc_sprint_1/ugc_service/env/.local.env как /ugc_sprint_1/ugc_service/env/.env
+2. Перейти в директрорию ugc_sprint_1
+```bash
+cd ugc_sprint_1
+```
+3. Запустить сборку docker-compose local
+```bash
+docker-compose -f docker-compose-local.yaml up
+```
+4. Настроить Run Configuration и запустить
+5. Сервис доступен по адресу http://127.0.0.1:8000/api/openapi
+6. Сервис Kafka доступен по адресу http://127.0.0.1:9021/clusters

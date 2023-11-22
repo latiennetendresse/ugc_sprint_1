@@ -1,0 +1,13 @@
+import os
+
+from pydantic import BaseSettings
+
+
+class Settings(BaseSettings):
+    project_name: str = ...
+    kafka_host: str = ...
+    kafka_port: int = ...
+    auth_addr: str = ...
+
+
+settings = Settings(_env_file=os.getenv("ENV_FILE"))

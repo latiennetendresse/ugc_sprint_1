@@ -1,0 +1,5 @@
+/ugc_service/env/.env
+./.idea
+.idea/
+ugc_service/app/src/models/__pycache__/*
+ugc_service/app/src/core/__pycache__/*
